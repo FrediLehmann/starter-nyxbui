@@ -4,6 +4,7 @@ import { notFound } from 'next/navigation';
 import { routing } from '@/i18n/routing';
 
 import './globals.css';
+import { StoreProvider } from '@/lib/store';
 
 export const metadata: Metadata = {
 	title: 'Create Next App',
@@ -25,7 +26,7 @@ export default async function RootLayout({
 
 	return (
 		<html lang={locale}>
-			<body>{children}</body>
+			<body><StoreProvider>{children}</StoreProvider></body>
 		</html>
 	);
 }
